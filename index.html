@@ -223,10 +223,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-12 22:55:24 / 修改时间：23:35:46" itemprop="dateCreated datePublished" datetime="2020-03-12T22:55:24+08:00">2020-03-12</time>
+              <time title="创建时间：2020-03-12 22:55:24" itemprop="dateCreated datePublished" datetime="2020-03-12T22:55:24+08:00">2020-03-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-13 22:26:20" itemprop="dateModified" datetime="2020-03-13T22:26:20+08:00">2020-03-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -257,258 +263,14 @@
 <li>多用户表示多个用户可以同时使用同一个计算机系统。多任务表示计算机系统可以同时运行多个计算进程或程序。可以通过图形用户界面（GUI）或命令行（文本）方式登录到系统中。</li>
 <li>Linux的基本思想是一切都是文件，指系统中的所有事物都可以归结为文件，包括命令、硬件和软件设备、操作系统、进程等等对于操作系统内核而言，都被视为拥有各自特性或类型的文件。</li>
 </ul>
-<h2 id="什么是Bash-shell-壳"><a href="#什么是Bash-shell-壳" class="headerlink" title="什么是Bash shell(壳)"></a>什么是Bash shell(壳)</h2><p>Bash Shell是一个命令解释器，它在操作系统的最外层，负责用户程序与内核进行交互操作的一种接口，将用户输入的命令翻译给操作系统，并将处理后的结果输出至屏幕。常用的Shell有bash、tcsh、ksh等。</p>
-<p>当我们使用远程连接工具连接linux服务，系统则会给打开一个默认的shell，我们可在这个界面执行命令、比如：获取系统当前时间，创建一个用户等等…</p>
-<h3 id="Bash-Shell能干什么"><a href="#Bash-Shell能干什么" class="headerlink" title="Bash Shell能干什么?"></a>Bash Shell能干什么?</h3><p>使用Shell实现对Linux系统的大部分管理，例如:</p>
-<ol>
-<li>文件管理</li>
-<li>权限管理</li>
-<li>用户管理</li>
-<li>磁盘管理</li>
-<li>网络管理</li>
-<li>软件管理<br>等等.</li>
-</ol>
-<h3 id="Bash-shell执行方式"><a href="#Bash-shell执行方式" class="headerlink" title="Bash shell执行方式"></a>Bash shell执行方式</h3><p>输入命令方式—&gt;效率低—&gt;适合少量的工作</p>
-<p>shell script—&gt;效率高—&gt;适合复杂的工作</p>
-<h3 id="Linux命令行的作用和意义"><a href="#Linux命令行的作用和意义" class="headerlink" title="Linux命令行的作用和意义"></a>Linux命令行的作用和意义</h3><p>众所周知，Linux是一个主要通过命令行来进行管理的操作系统，即通过键盘输入指令来管理的相关操作，包括但不限于编辑文件、启动和停止服务等。这和大家所使用的Windows系统使用鼠标点击这类可视化管理大不相同。</p>
-<p>使用鼠标可视化管理的优势是简单、容易上手，但缺点是不能方便快速、批量、自动化的管理系统，而且感觉系统也很臃肿，这个时候Linux系统的命令行管理优势就凸显出来了。使用Linux 命令行管理，不但可以实现批量、自动化管理，还可以实现智能化、可视化管理，当然，后者需要开发人员配合开发管理界面来完成，但无论如何，Linux系统的优势还是快速、批量、自动化、智能化管理系统及处理业务。</p>
-<h3 id="命令行提示符介绍"><a href="#命令行提示符介绍" class="headerlink" title="命令行提示符介绍"></a>命令行提示符介绍</h3><p>Linux命令行结尾的提示符有”#”和”$”两种，如下所示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@oldboy ~]<span class="comment"># #&lt;==这是超级管理员root用户对应的命令行</span></span><br><span class="line">[root@oldboy ~]$ <span class="comment">#&lt;==这是普通用户oldboy对应的命令行</span></span><br></pre></td></tr></table></figure>
-<p>其中：</p>
-<ul>
-<li>root，表示当前登录的用户（可用whoami命令查询查询）</li>
-<li>@符，表示分隔符</li>
-<li>oldboy，表示主机名（可用hostname命令查询）</li>
-<li>~号，表示当前用户所在的路径（可用pwd命令查看，默认用户登录之后所在的路径是当前用户的家目录）</li>
-<li>#号，表示超级用户root登录后的命令行结尾提示符，而$号是使用普通用户登录后的命令行结尾提示符。超级用户具有管理系统的所有权限，普通用户的权限比较小，只能进行基本的系统信息查看等操作，无法更改系统配置和管理服务。</li>
-<li>Linux命令行提示符由PS1环境变量所控制的</li>
-</ul>
-<h3 id="Linux系统基本命令"><a href="#Linux系统基本命令" class="headerlink" title="Linux系统基本命令"></a>Linux系统基本命令</h3><p>Linux命令行的语法结构如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span>  [[-]option(s)] [option argument(s)][<span class="built_in">command</span> argument(s)]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>command:命令的名字。<br>[[-]option(s)]:改变命令行的一个或多个修饰符，即选项。<br>[option argument(s)]：选项的参数 。<br>[command argument(s)]：命令的参数。</p>
-</blockquote>
-<p>command、option、option argument和<code>command argument</code>之间<strong>必须用空格分开</strong>，但是在多个option或多个option argument之间不需要空格。例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">ls  -la</span><br><span class="line">ls  -la *    <span class="comment">#ls表示命令名，l和a表示选项  *表示命令参数。</span></span><br><span class="line">ls  -lat *.c</span><br></pre></td></tr></table></figure>
-
-<h3 id="Linux系统基本命令-1"><a href="#Linux系统基本命令-1" class="headerlink" title="Linux系统基本命令"></a>Linux系统基本命令</h3><table>
-<thead>
-<tr>
-<th>command</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ls</td>
-<td>显示当前目录下的文件。</td>
-</tr>
-<tr>
-<td>cd</td>
-<td>改变当前目录。</td>
-</tr>
-<tr>
-<td>cp</td>
-<td>拷贝文件。</td>
-</tr>
-<tr>
-<td>rm</td>
-<td>删除文件。</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>显示当前目录</td>
-</tr>
-<tr>
-<td>mkdir</td>
-<td>新建目录</td>
-</tr>
-<tr>
-<td>rmdir</td>
-<td>删除空目录</td>
-</tr>
-<tr>
-<td>man</td>
-<td>查看帮助。</td>
-</tr>
-</tbody></table>
-<h2 id="base-shell常用快捷键"><a href="#base-shell常用快捷键" class="headerlink" title="base shell常用快捷键"></a>base shell常用快捷键</h2><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ctrl + c</td>
-<td>cancel 取消当前的操作</td>
-</tr>
-<tr>
-<td>ctrl + l</td>
-<td>(小写字母L) clear（命令）清空当前屏幕</td>
-</tr>
-<tr>
-<td>ctrl + d</td>
-<td>退出当前用户</td>
-</tr>
-<tr>
-<td>ctrl + r</td>
-<td>查找（历史命令）</td>
-</tr>
-<tr>
-<td>ctrl + a</td>
-<td>把光标移动到行首</td>
-</tr>
-<tr>
-<td>ctrl + e</td>
-<td>把光标移动到行尾</td>
-</tr>
-<tr>
-<td>ctrl + u</td>
-<td>把光标到行首的内容删除/剪切</td>
-</tr>
-<tr>
-<td>ctrl + y</td>
-<td>粘贴</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>光标所在处从前往后删除内容</td>
-</tr>
-<tr>
-<td>ctrl + k</td>
-<td>把光标到行尾的内容删除/剪切</td>
-</tr>
-<tr>
-<td>ctrl + →</td>
-<td>向右移动一个单词 Xshell工具提供的</td>
-</tr>
-<tr>
-<td>ctrl + ←</td>
-<td>向左移动一个单词 Xshell工具提供的</td>
-</tr>
-<tr>
-<td>ctrl + s</td>
-<td>锁屏</td>
-</tr>
-<tr>
-<td>ctrl + q</td>
-<td>解锁</td>
-</tr>
-<tr>
-<td>ctrl + w</td>
-<td>删除当前位置至上一个空格的字符</td>
-</tr>
-<tr>
-<td>Esc + .</td>
-<td>获取上一条命令最后的部分（空格分割）</td>
-</tr>
-</tbody></table>
-<p>!号开头的快捷命令</p>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>!!</td>
-<td>执行上一条命令</td>
-</tr>
-<tr>
-<td>!cd</td>
-<td>执行最近以cd开头的命令</td>
-</tr>
-<tr>
-<td>!num</td>
-<td>执行历史命令列表的第num（数字）条命令</td>
-</tr>
-<tr>
-<td>&gt;注意：有些的快捷命令是基于Xshell和SecureCRT远程连接工具实现的。</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="命令别名alias"><a href="#命令别名alias" class="headerlink" title="命令别名alias"></a>命令别名alias</h2><h3 id="如何设定别名"><a href="#如何设定别名" class="headerlink" title="如何设定别名"></a>如何设定别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> oldboy=<span class="string">'ping www.baidu.com'</span></span><br></pre></td></tr></table></figure>
-<h3 id="如何取消别名"><a href="#如何取消别名" class="headerlink" title="如何取消别名"></a>如何取消别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unalias</span> oldboy</span><br></pre></td></tr></table></figure>
-<h3 id="为什么系统默认存在一些别名"><a href="#为什么系统默认存在一些别名" class="headerlink" title="为什么系统默认存在一些别名:"></a>为什么系统默认存在一些别名:</h3><p>防止在执行危险指令时,发生误操作的情况,比如:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>当前的别名全部都是针对当前的Shell生效,临时生效.</p>
-</blockquote>
-<h3 id="永久生效-扩展"><a href="#永久生效-扩展" class="headerlink" title="永久生效{扩展}"></a>永久生效{扩展}</h3><p>将内容写入到 /etc/bashrc 所有的shell都生效</p>
-<h2 id="Linux文件系统目录结构"><a href="#Linux文件系统目录结构" class="headerlink" title="Linux文件系统目录结构"></a>Linux文件系统目录结构</h2><p>Linux的文件系统目录结构类似树形结构，文件系统是由根目录（/）往下生长。如下图所示</p>
-<img src="/2020/03/12/Linux%E5%9F%BA%E7%A1%80%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80/Linux%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg" class="" title="Linux的文件系统目录结构图">
-
-<blockquote>
-<p>根目录（/）：根目录位于文件系统的最顶层，用斜线表示<br> /bin: 存放基本命令的可执行文件或可执行文件的符号链接。常用的cat、cp、ls等放在该目录下。<br>/boot：存放了用于启动Linux操作系统的所有文件，包括Linux内核的二进制镜像。<br>/dev: 设备目录，存放连接到计算机上的设备的对应文件。<br>/etc：存放和特定主机相关的文件和目录。这些文件和目录包括系统基本配置文件。该目录通常由管理员使用。<br>/home:存放一般用户的主目录<br>/lib:存放重要的库文件，安装软件的库文件存储在/usr/lib下<br>/mnt:用来临时挂在文件系统。<br>/proc:当前进程和系统的信息<br>/root:root用户的主目录。<br>/usr:存放用户使用的系统命令及应用程序等。</p>
-</blockquote>
-<h2 id="Linux下文本编辑"><a href="#Linux下文本编辑" class="headerlink" title="Linux下文本编辑"></a>Linux下文本编辑</h2><p>在使用Linux系统过程中，经常需要编辑文本文件，如编写C语言程序或脚本文件等。选择一个适合的文本编辑器非常重要。<br>字符界面下，常用的文本编辑器有：</p>
-<table>
-<thead>
-<tr>
-<th>编辑器名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>vi编辑器</td>
-<td>Unix类操作系统通用的全屏幕编辑器。</td>
-</tr>
-<tr>
-<td>vim编辑器</td>
-<td>vi的增强版本。</td>
-</tr>
-<tr>
-<td>emacs编辑器</td>
-<td>GNU的编辑器，功能强大的全屏幕编辑器。</td>
-</tr>
-</tbody></table>
-<p>图形界面下，常用的文本编辑器有：</p>
-<table>
-<thead>
-<tr>
-<th>编辑器名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>gedit 或kedit编辑器</td>
-<td>全屏幕文本编辑程序。</td>
-</tr>
-</tbody></table>
-<h4 id="vim编辑器，常用命令有："><a href="#vim编辑器，常用命令有：" class="headerlink" title="vim编辑器，常用命令有："></a>vim编辑器，常用命令有：</h4><table>
-<thead>
-<tr>
-<th>command</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>vim</td>
-<td>打开或者创建一个文件</td>
-</tr>
-<tr>
-<td>a</td>
-<td>进入编辑模式</td>
-</tr>
-<tr>
-<td>:q</td>
-<td>不存盘退出</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>存盘</td>
-</tr>
-<tr>
-<td>ESC</td>
-<td>进入命令模式</td>
-</tr>
-<tr>
-<td>&gt;关于vim编辑器的使用请参考书籍《a byte of vim》或查询网上相关资料。</td>
-<td></td>
-</tr>
-</tbody></table>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/12/Linux%E5%9F%BA%E7%A1%80%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
