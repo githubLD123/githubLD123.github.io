@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux文件权限属组</title>
+    <url>/2020/03/16/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%B1%9E%E7%BB%84/</url>
+    <content><![CDATA[<h1 id="Linux文件属性（属主属组权限）"><a href="#Linux文件属性（属主属组权限）" class="headerlink" title="Linux文件属性（属主属组权限）"></a>Linux文件属性（属主属组权限）</h1><blockquote>
+<p><a href="https://www.cnblogs.com/CYHISTW/p/11031429.html" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h2 id="Linux文件属性"><a href="#Linux文件属性" class="headerlink" title="Linux文件属性"></a>Linux文件属性</h2><p>Linux系统是一种典型的<strong>多用户系统</strong>，不同的<strong>用户</strong>处于不同的地位，拥有不同的<strong>权限</strong>。为了保护系统的安全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。</p>
+<p>在Linux中我们可以使用<code>ll</code>或者<code>ls –l</code>命令来显示一个文件的<strong>属性</strong>以及文件<strong>所属的用户和组</strong></p>
+<a id="more"></a>
+
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon /]<span class="comment"># ls -l</span></span><br><span class="line">总用量 24</span><br><span class="line">lrwxrwxrwx.   1 root root    7 6月   6 21:30 bin -&gt; usr/bin</span><br><span class="line">dr-xr-xr-x.   5 root root 4096 6月  16 11:29 boot</span><br><span class="line">drwxr-xr-x.  20 root root 3300 6月  16 11:51 dev</span><br><span class="line">drwxr-xr-x. 146 root root 8192 6月  16 12:10 etc</span><br><span class="line">drwxr-xr-x.   4 root root   36 6月   8 11:45 home</span><br><span class="line">lrwxrwxrwx.   1 root root    7 6月   6 21:30 lib -&gt; usr/lib</span><br><span class="line">lrwxrwxrwx.   1 root root    9 6月   6 21:30 lib64 -&gt; usr/lib64</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 media</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 mnt</span><br><span class="line">drwxr-xr-x.   4 root root   30 6月   6 15:20 opt</span><br><span class="line">dr-xr-xr-x. 290 root root    0 6月  16 11:51 proc</span><br><span class="line">dr-xr-x---.   6 root root  219 6月  16 11:27 root</span><br><span class="line">drwxr-xr-x.  40 root root 1240 6月  16 12:10 run</span><br><span class="line">lrwxrwxrwx.   1 root root    8 6月   6 21:30 sbin -&gt; usr/sbin</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 srv</span><br><span class="line">dr-xr-xr-x.  13 root root    0 6月  16 11:51 sys</span><br><span class="line">drwxrwxrwt.  30 root root 4096 6月  16 12:38 tmp</span><br><span class="line">drwxr-xr-x.  13 root root  155 6月   6 21:30 usr</span><br><span class="line">drwxr-xr-x.  21 root root 4096 6月   6 21:54 var</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>[文件类型][属主权限][属组权限][其他用户权限].</li>
+<li>硬连接数 </li>
+<li>[属主][属组]</li>
+<li>[大小]</li>
+<li>[内容最后修改时间]</li>
+<li>[文件名]</li>
+</ul>
+<p>[文件类型]<br>在Linux中第一个字符代表这个文件是目录、文件或链接文件等等。<br>当为[ d ]则是目录<br>当为[ - ]则是文件；<br>若是[ l ]则表示为链接文档(link file)；<br>若是[ b ]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；<br>若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</p>
+<p>[属主权限][属组权限][其他用户权限]<br>接下来的字符中，以三个为一组，且均为『rwx』的三个参数的组合。<br>其中，<strong>[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。</strong> 要注意的是，这三个权限的位置不会改变，如果<strong>没有权限，就会出现减号[ - ]</strong></p>
+<p>硬连接数<br>在Linux系统中，链接分为两种，一种是硬链接（Hard link），另一种称为符号链接或软链接（Symbolic Link）。</p>
+<p>属主user/属组group/其他用户others</p>
+<img src="/2020/03/16/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%B1%9E%E7%BB%84/%E5%B1%9E%E7%BB%84.jpg" class="" title="前10个字符代表的含义">
+
+<p>每个文件的属性由左边第一部分的10个字符来确定</p>
+<p>从左至右用0-9这些数字来表示。</p>
+<p>第0位确定文件类型，第1-3位确定属主（该文件的所有者）拥有该文件的权限。</p>
+<p>第4-6位确定属组（所有者的同组用户）拥有该文件的权限，第7-9位确定其他用户拥有该文件的权限。</p>
+<h2 id="Linux文件属主和属组"><a href="#Linux文件属主和属组" class="headerlink" title="Linux文件属主和属组"></a>Linux文件属主和属组</h2><p>分析</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon /]<span class="comment"># ls -l</span></span><br><span class="line">total 64</span><br><span class="line">drwxr-xr-x 2 root  root  4096 Feb 15 14:46 cron</span><br><span class="line">drwxr-xr-x 3 mysql mysql 4096 Apr 21  2014 mysql</span><br></pre></td></tr></table></figure>
+
+<p>对于文件来说，它都有一个特定的所有者，也就是对该文件具有所有权的用户。</p>
+<p>同时，在Linux系统中，用户是按组分类的，一个用户属于一个或多个组。</p>
+<p>文件所有者以外的用户又可以分为文件所有者的同组用户和其他用户。</p>
+<p>因此，Linux系统按文件所有者、文件所有者同组用户和其他用户来规定了不同的文件访问权限。</p>
+<p>在以上实例中，mysql 文件是一个目录文件，属主和属组都为 mysql，属主有可读、可写、可执行的权限；与属主同组的其他用户有可读和可执行的权限；其他用户也有可读和可执行的权限。</p>
+<p><strong>对于 root 用户来说，一般情况下，文件的权限对其不起作用。</strong></p>
+<h3 id="更改文件属性"><a href="#更改文件属性" class="headerlink" title="更改文件属性"></a>更改文件属性</h3><h4 id="1、chgrp：更改文件属组"><a href="#1、chgrp：更改文件属组" class="headerlink" title="1、chgrp：更改文件属组"></a>1、chgrp：更改文件属组</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chgrp [-R] 属组名 文件名</span><br></pre></td></tr></table></figure>
+<p>参数 -R：递归更改文件属组，就是在更改某个目录文件的属组时，如果加上-R的参数，那么该目录下的所有文件的属组都会更改。</p>
+<h4 id="2、chown：更改文件属主，也可以同时更改文件属组"><a href="#2、chown：更改文件属主，也可以同时更改文件属组" class="headerlink" title="2、chown：更改文件属主，也可以同时更改文件属组"></a>2、chown：更改文件属主，也可以同时更改文件属组</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chown [–R] 属主名 文件名</span><br><span class="line">chown [-R] 属主名：属组名 文件名</span><br></pre></td></tr></table></figure>
+
+<p>进入 /root 目录看当前 目录有什么文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon /]<span class="comment"># cd ~</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls</span></span><br><span class="line">anaconda-ks.cfg initial-setup-ks.cfg</span><br><span class="line">[root@bogon ~]<span class="comment"># ls -l</span></span><br><span class="line">总用量 8</span><br><span class="line">-rw-------. 1 root root 1755 6月 6 21:43 anaconda-ks.cfg</span><br><span class="line">-rw-r--r--. 1 root root 1783 6月 6 14:02 initial-setup-ks.cfg</span><br></pre></td></tr></table></figure>
+<p>将anaconda-ks.cfg修改属主</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># chown bin anaconda-ks.cfg</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls -l</span></span><br><span class="line">总用量 8</span><br><span class="line">-rw-------. 1 bin  root 1755 6月   6 21:43 anaconda-ks.cfg</span><br><span class="line">-rw-r--r--. 1 root root 1783 6月   6 14:02 initial-setup-ks.cfg</span><br></pre></td></tr></table></figure>
+<p>将anaconda-ks.cfg的拥有者与群组改回为root:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># chown root:root anaconda-ks.cfg</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls -l</span></span><br><span class="line">总用量 8</span><br><span class="line">-rw-------. 1 root root 1755 6月 6 21:43 anaconda-ks.cfg</span><br><span class="line">-rw-r--r--. 1 root root 1783 6月 6 14:02 initial-setup-ks.cfg</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、chmod：更改文件9个属性"><a href="#3、chmod：更改文件9个属性" class="headerlink" title="3、chmod：更改文件9个属性"></a>3、chmod：更改文件9个属性</h4><p>Linux文件属性有<strong>两种设置方法</strong>，一种是符号，一种是数字。</p>
+<p>Linux文件的基本权限就有九个，分别是owner/group/others，三种身份各有自己的read/write/execute权限。</p>
+<p>先复习一下刚刚上面提到的数据：文件的权限字符为：『-rwxrwxrwx』， 这九个权限是三个三个一组的！其中，我们可以使用数字来代表各个权限，各权限的分数如下：</p>
+<blockquote>
+<p>r:4<br>w:2<br>x:1</p>
+</blockquote>
+<p>每种身份(owner/group/others)各自的三个权限(r/w/x)分数是需要累加的，例如当权限为： [-rwxrwx—] 分数则是：</p>
+<blockquote>
+<p>owner = rwx = 4+2+1 = 7<br>group = rwx = 4+2+1 = 7<br>others= — = 0+0+0 = 0</p>
+</blockquote>
+<p>我们设定权限的变更时，该文件的权限数字就是770</p>
+<p>变更权限的指令chmod的语法是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod [-R] xyz 文件或目录</span><br></pre></td></tr></table></figure>
+
+<p>选项与参数：<br>xyz : 就是刚刚提到的数字类型的权限属性，为 rwx 属性数值的相加。<br>-R : 进行递归(recursive)的持续变更，亦即连同次目录下的所有文件都会变更<br>举例来说，如果要将.bashrc这个文件所有的权限都设定启用，那么命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># ls -al .bashrc</span></span><br><span class="line">-rw-r--r--. 1 root root 176 12月 29 2013 .bashrc  //原来为644(rw-r--r--)</span><br><span class="line">[root@bogon ~]<span class="comment"># chmod 777 .bashrc  //改为777（rwxrwxrwx）</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls -al .bashrc</span></span><br><span class="line">-rwxrwxrwx. 1 root root 176 12月 29 2013 .bashrc</span><br></pre></td></tr></table></figure>
+
+<p>同样返回刚刚这个文件的权限 只需要计算一下最初的权限之和</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># chmod 644 .bashrc //改回644（rw-rw-r--）</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls -al .bashrc</span></span><br><span class="line">-rw-r--r--. 1 root root 176 12月 29 2013 .bashrc</span><br></pre></td></tr></table></figure>
+<p>这就跟最开始查询的时候权限一样了</p>
+<h3 id="符号类型改变文件权限"><a href="#符号类型改变文件权限" class="headerlink" title="符号类型改变文件权限"></a>符号类型改变文件权限</h3><p>还有一个改变权限的方法，从之前的介绍中我们可以发现，基本上就九个权限分别是：</p>
+<blockquote>
+<p>(1)user<br>(2)group<br>(3)others</p>
+</blockquote>
+<p>那么我们就可以使用 u, g, o 来代表三种身份的权限！</p>
+<p>此外， a 则代表 all，即全部的身份。读写执行的权限可以写成 r, w, x</p>
+<p>可以用 + - =来修改权限：</p>
+<img src="/2020/03/16/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%B1%9E%E7%BB%84/%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E6%94%B9%E6%9D%83%E9%99%90.jpg" class="" title="对照表">
+
+<p>例如我们需要将文件权限设置为 <code>-rwxr-xr--</code> ，可以使用 <code>chmod u=rwx,g=rx,o=r</code> 文件名 来设定:</p>
+<p>我们创建一个文件来测试下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># touch test1    //创建测试文件</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls -al test1</span></span><br><span class="line">-rw-r--r--. 1 root root 0 6月  16 14:08 test1</span><br></pre></td></tr></table></figure>
+
+<p>修改权限，使用<code>chmod u=rwx,g=rx,o=r test1</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># chmod u=rwx,g=rx,o=r test1</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls -al test1</span></span><br><span class="line">-rwxr-xr--. 1 root root 0 6月  16 14:08 test1</span><br></pre></td></tr></table></figure>
+<p>如果想将权限去掉而不改变其他已存在的权限呢？例如要拿掉全部人的可执行权限，则使用<br><code>chmod a-x test1</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># chmod a-x test1</span></span><br><span class="line">[root@bogon ~]<span class="comment"># ls -al test1</span></span><br><span class="line">-rw-r--r--. 1 root root 0 6月  16 14:08 test1</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>linux</category>
+        <category>转</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux基础中的基础</title>
     <url>/2020/03/12/Linux%E5%9F%BA%E7%A1%80%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="Linux基础"><a href="#Linux基础" class="headerlink" title="Linux基础"></a>Linux基础</h1><h2 id="Linux系统简介"><a href="#Linux系统简介" class="headerlink" title="Linux系统简介"></a>Linux系统简介</h2><ul>
@@ -263,7 +359,6 @@
 </tbody></table>
 ]]></content>
       <categories>
-        <category>科普</category>
         <category>linux</category>
       </categories>
       <tags>
