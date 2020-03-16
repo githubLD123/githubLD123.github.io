@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>史上最全Vim快捷键</title>
+    <url>/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="史上最全Vim快捷键"><a href="#史上最全Vim快捷键" class="headerlink" title="史上最全Vim快捷键"></a>史上最全Vim快捷键</h1><blockquote>
+<p>作者：卢钧轶(cenalulu)<br>来自：<a href="http://cenalulu.github.io/linux/all-vim-cheatsheat" target="_blank" rel="noopener">http://cenalulu.github.io/linux/all-vim-cheatsheat</a><br><a href="https://www.runoob.com/w3cnote/all-vim-cheatsheat.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/all-vim-cheatsheat.html</a></p>
+</blockquote>
+<h2 id="经典版"><a href="#经典版" class="headerlink" title="经典版"></a>经典版</h2><p>下面这个键位图应该是大家最常看见的经典版了。</p>
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/classic1.gif" class="">
+
+<a id="more"></a>
+
+<h2 id="对应的简体中文版"><a href="#对应的简体中文版" class="headerlink" title="对应的简体中文版"></a>对应的简体中文版</h2><img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-cheat-sheet-sch1.gif" class="">
+
+<p>其实经典版是一系列的入门教程键位图的组合结果，下面是不同编辑模式下的键位图。</p>
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-tutorial-1.gif" class="">
+
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-tutorial-2.gif" class="">
+
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-tutorial-3.gif" class="">
+
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-tutorial-4.gif" class="">
+
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-tutorial-5.gif" class="">
+
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-tutorial-6.gif" class="">
+
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/vi-vim-tutorial-7.gif" class="">
+
+<h2 id="入门版"><a href="#入门版" class="headerlink" title="入门版"></a>入门版</h2><p>基本操作的入门版。</p>
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/entry1.png" class="">
+
+<h2 id="进阶版"><a href="#进阶版" class="headerlink" title="进阶版"></a>进阶版</h2><img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/advanced1.png" class="">
+
+<h2 id="增强版"><a href="#增强版" class="headerlink" title="增强版"></a>增强版</h2><p>下图是一个更新时间较新的现代版，含有的信息也更丰富。</p>
+<img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/morden1.png" class="">
+
+<h2 id="文字版"><a href="#文字版" class="headerlink" title="文字版"></a>文字版</h2><img src="/2020/03/16/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/text1.png" class="">]]></content>
+      <categories>
+        <category>linux</category>
+        <category>转</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux文件权限属组</title>
     <url>/2020/03/16/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%B1%9E%E7%BB%84/</url>
     <content><![CDATA[<h1 id="Linux文件属性（属主属组权限）"><a href="#Linux文件属性（属主属组权限）" class="headerlink" title="Linux文件属性（属主属组权限）"></a>Linux文件属性（属主属组权限）</h1><blockquote>
